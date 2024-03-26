@@ -1,3 +1,19 @@
-GITHUB-repo: 
+# GITHUB-repo: https://github.com/Mugen0815/crud_api
 
-exmaple-docker-compose.yml:
+Example `docker-compose.yml`:
+
+```yaml
+version: '3'
+
+services:
+  web:
+    image: mugen0815/djangorest
+    ports:
+      - "8000:8000"
+    volumes:
+      - db:/data # Mount the volume to persist the data
+    command: python manage.py runserver 0.0.0.0:8000
+
+volumes:
+  db:
+```
